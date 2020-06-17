@@ -24,6 +24,12 @@ app.use(multer({ storage }).single("image"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//routes
+app.use(require("./routes/books"));
+
+//static files
+app.use(express.static(path.join(__dirname, "public"))); //leer carpeta public para archivos staticos
+
 //start server
 app.listen(app.get("port"), () => {
   console.log("server on port: " + app.get("port"));
