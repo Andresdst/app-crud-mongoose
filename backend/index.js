@@ -3,8 +3,9 @@ const morgan = require("morgan");
 const multer = require("multer");
 const path = require("path");
 
+//inicializaciones
 const app = express();
-
+require("./database");
 //settings
 app.set("port", 3000);
 
