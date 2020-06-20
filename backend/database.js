@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/javascriptdb", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
   })
   .then((db) => console.log("DB is connected"))
