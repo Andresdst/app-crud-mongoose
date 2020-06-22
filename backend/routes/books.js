@@ -21,4 +21,16 @@ router.post("/", (req, res) => {
       res.json(err);
     });
 });
+
+router.delete("/:id", (req, res) => {
+  Book.findByIdAndDelete(req.params.id)
+    .then((book) => {
+      res.send("borrado");
+      console.log(book);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
 module.exports = router;
