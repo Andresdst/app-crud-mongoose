@@ -1,8 +1,24 @@
 const { Router } = require("express");
+const Book = require("../models/Book");
 const router = Router();
 
 router.get("/", (req, res) => {
-  res.send("hello");
+  Book.find().then((books) => {
+    res.json(books);
+  });
 });
 
+router.post("/", (req, res) => {
+  const { title, author, isbn } = req.body;
+
+  Book.create({ title, author, isbn })
+    .then((book) => {
+      res.json(book);
+      console.log(book);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
 module.exports = router;
