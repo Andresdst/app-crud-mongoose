@@ -1,6 +1,6 @@
 # Aplicacion FullStack
 
----
+## app Server side Render
 
 ## programas necesarios
 
@@ -19,3 +19,12 @@
 - mongoose
 - morgan
 - multer
+
+- webpack
+- webpack-cli
+- html-webpack-plugin
+- css-loader
+- style-loader
+- mini-css-extract-plugin
+- webpack-dev-server
+- timeago.js
