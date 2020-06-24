@@ -10,8 +10,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const { title, author, isbn } = req.body;
-
-  Book.create({ title, author, isbn })
+  const imagePath = "/uploads/" + req.file.filename; //req.file para imagenes o archivos
+  Book.create({ title, author, isbn, imagePath })
     .then((book) => {
       res.json(book);
       console.log(book);
