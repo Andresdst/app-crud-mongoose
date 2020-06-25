@@ -3,14 +3,10 @@ class BookService {
     this.URI = "http://localhost:3000/api/books";
   }
 
-  getBooks() {
-    //por defecto la peticion es get
-    fetch(this.URI).then((res) => {
-      res.json().then((books) => {
-        console.log(books);
-        return books;
-      });
-    });
+  async getBooks() {
+    const response = await fetch(this.URI);
+    const books = await response.json();
+    return books;
   }
 
   async postBook(book) {
