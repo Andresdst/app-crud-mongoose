@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//para postear libro
 document.getElementById("book-form").addEventListener("submit", function (e) {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
@@ -28,4 +29,12 @@ document.getElementById("book-form").addEventListener("submit", function (e) {
   const ui = new UI();
   ui.addNewBook(formData);
   e.preventDefault();
+});
+
+//para eliminar libro
+
+document.getElementById("books-cards").addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    console.log("eliminando");
+  }
 });
